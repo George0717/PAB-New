@@ -1,6 +1,7 @@
 package com.if3b.aplikasiaku.Adapter;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -26,17 +27,21 @@ public class AdapterQuote extends RecyclerView.Adapter<AdapterQuote.ViewHolderQu
     @NonNull
     @Override
     public ViewHolderQuotes onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View varView = LayoutInflater.from(ctx).inflate(R.layout.item_quote, parent, false);
+        return new ViewHolderQuotes(varView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderQuotes holder, int position) {
+        QuotesModel qm = listQuotes.get(position);
+        holder.tvQuotes.setText(qm.getText());
+        holder.tvAuthor.setText(qm.getAuthor());
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listQuotes.size();
     }
 
     public class ViewHolderQuotes extends RecyclerView.ViewHolder{

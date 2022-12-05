@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="6dp"
-    tools:context=".Activity.MainActivity">
+    tools:context=".Activity.MainActivity"
+    android:background="#75C3E3">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_quotes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_quote"
-        android:background="#75C3E3"
+
         />
     <ProgressBar
         android:id="@+id/pb_quotes"
